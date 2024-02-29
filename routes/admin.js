@@ -2,22 +2,19 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 //const rootDir = require('../utils/path');
-const productsController = require('../controllers/products');
+const adminController = require('../controllers/admin');
 
 
-let products = [];
+
 
 //  /admin/add-product => GET
-router.get('/add-product', productsController.getAddProduct);
+router.get('/admin/addProduct', adminController.getAddProduct);
 
+//  /admin/products => GET
+router.get('/products', adminController.getProducts);
 
-// router.get('/add-product', (req, res, next) => {
-//     console.log("Server app started");
-//     res.render('add-product', {pageTitle: "Add Product", path: "/admin/add-product", activeAddProduct: true, productCSS: true});
-//     //next(); // allows the request to continue to the next middleware in line
-// });
-
-router.post('/add-product', productsController.postAddProduct);
+// /admin/add-product => POST
+// router.post('/admin/add-product', adminController.postAddProduct);
    
 
 
